@@ -65,6 +65,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Gtk2/Html2
 %{perl_vendorarch}/Gtk2/Html2/Install
 %dir %{perl_vendorarch}/auto/Gtk2/Html2
-%{perl_vendorarch}/auto/Gtk2/Html2/Html2.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Gtk2/Html2/Html2.so
 %{_mandir}/man3/Gtk2::Html2*.3pm*
