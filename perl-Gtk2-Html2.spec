@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test" (requires X server)
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pnam	Gtk2-Html2
 Summary:	Gtk2::Html2 - Perl interface to gtkhtml2 library
 Summary(pl.UTF-8):	Gtk2::Html2 - perlowy interfejs do biblioteki gtkhtml2
