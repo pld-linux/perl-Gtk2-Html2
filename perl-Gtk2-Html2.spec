@@ -16,10 +16,11 @@ URL:		http://gtk2-perl.sourceforge.net/
 BuildRequires:	libgtkhtml-devel >= 2.0.0
 BuildRequires:	perl-ExtUtils-Depends >= 0.200
 BuildRequires:	perl-ExtUtils-PkgConfig >= 0.1
-BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-Glib >= 1.040
 BuildRequires:	perl-Gtk2 >= 1.040
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 Requires:	libgtkhtml >= 2.0.0
 Requires:	perl-Glib >= 1.040
 Requires:	perl-Gtk2 >= 1.040
@@ -52,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Gtk2/Html2/*.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Gtk2/Html2/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
