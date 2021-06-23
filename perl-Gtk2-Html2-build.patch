@@ -1,0 +1,24 @@
+--- Gtk2-Html2-0.06/Makefile.PL.orig	2021-01-12 01:08:11.000000000 +0100
++++ Gtk2-Html2-0.06/Makefile.PL	2021-06-23 20:32:09.665288362 +0200
+@@ -43,8 +43,8 @@
+    exit 1; # not reached
+ }
+ 
+-#my %pkgcfg = ExtUtils::PkgConfig->find ('libgtkhtml-2.0 >= '
+-#				       . $build_reqs{gtkhtml2});
++my %pkgcfg = ExtUtils::PkgConfig->find ('libgtkhtml-2.0 >= '
++				       . $build_reqs{gtkhtml2});
+ 
+ mkdir 'build', 0777;
+ 
+@@ -64,8 +64,8 @@
+ # will chain from this one.
+ 
+ my $gtkhtml2 = ExtUtils::Depends->new ('Gtk2::Html2', 'Gtk2');
+-#$gtkhtml2->set_inc ($pkgcfg{cflags});
+-#$gtkhtml2->set_libs ($pkgcfg{libs});
++$gtkhtml2->set_inc ($pkgcfg{cflags});
++$gtkhtml2->set_libs ($pkgcfg{libs});
+ $gtkhtml2->add_xs (@xs_files);
+ $gtkhtml2->add_pm ('Html2.pm' => '$(INST_LIBDIR)/Html2.pm');
+ $gtkhtml2->add_typemaps (File::Spec->catfile(cwd(), 'build/gtkhtml2perl.typemap'));
